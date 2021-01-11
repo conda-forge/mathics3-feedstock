@@ -11,7 +11,7 @@ source:
   sha256: 272b35be879302e0bc5943101c57e7d93d9974050588dca06a03580a5822aa63
 
 build:
-  number: 1
+  number: 2
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - mathics = mathics.main:main
