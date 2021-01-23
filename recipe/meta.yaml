@@ -36,8 +36,9 @@ requirements:
     - python
     - python-dateutil
     - requests
-    - sympy >=1.6,<1.7
-
+    - sympy >=1.7,<1.8
+    - scikit-image
+    - wordcloud
 test:
   imports:
     - mathics
