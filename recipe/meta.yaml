@@ -1,5 +1,5 @@
 {% set name = "mathics3" %}
-{% set version = "1.1.1" %}
+{% set version = "3.0.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/Mathics3-{{ version }}.tar.gz
-  sha256: 2a4b59f824a1ebdc2390783839b4aa2920db2dc4cebc3286d2b0bb1543cc7fd2
+  sha256: 07a1f67e8a856f4b2a28ce724ec51a6e1ab074d4f1a6e024a7bf5d1482c87bb7
 
 build:
   number: 0
