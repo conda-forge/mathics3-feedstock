@@ -54,7 +54,7 @@ test:
 about:
   home: https://mathics.org/
   summary: A general-purpose computer algebra system.
-  license: GPL-3.0
+  license: GPL-2.0-or-later
   license_file: COPYING.txt
 
 extra:
