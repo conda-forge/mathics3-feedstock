@@ -16,10 +16,7 @@ __migrator:
   pr_limit: 2
 
 python:
-  - 3.12.* *_cpython   # [not (osx and arm64)]
-  - 3.11.* *_cpython   # [not (osx and arm64)]
   - 3.8.* *_cpython
-  - 3.12.* *_73_pypy   # [not (win64 or (osx and arm64))]
 
 numpy:
   - 1.16       # [not (osx and arm64)]
