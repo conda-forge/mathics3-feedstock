@@ -23,7 +23,7 @@ requirements:
   host:
     - cython
     - pip
-    - python >=3.10
+    - python
     - sympy >=1.13,<1.14
   run:
     - cython >=0.15.1
