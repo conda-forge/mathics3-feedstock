@@ -24,6 +24,7 @@ requirements:
     - cython
     - pip
     - python
+    - sympy >=1.13,<1.14
   run:
     - cython >=0.15.1
     - Mathics-Scanner >=1.3.0
