@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/Mathics3-{{ version }}.tar.gz
-  sha256: 2a4b59f824a1ebdc2390783839b4aa2920db2dc4cebc3286d2b0bb1543cc7fd2
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/Mathics3-{{ version }}.tar.gz
+  sha256: d039a5dac244d7342abd29a5663d083ba28a86370f6b5cfddc6604ef42af150b
 
 build:
   number: 0
@@ -19,6 +19,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - cython
     - pip
