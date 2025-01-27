@@ -36,6 +36,7 @@ requirements:
     - pint
     - python
     - python-dateutil
+    - pywin32 # [win64]
     - Pympler
     - requests
     - scipy
