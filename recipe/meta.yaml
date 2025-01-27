@@ -21,7 +21,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib("c") }}  
   host:
-    - python {{ python_min }}
+    - python
     - setuptools >=70.0.0
     - cython >=0.15.1
     - mathics-scanner >=1.4.0
