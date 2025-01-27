@@ -1,51 +1,57 @@
-{% set name = "Mathics3" %}
+{% set name = "mathics3" %}
 {% set version = "8.0.0" %}
-
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | lower }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/mathics3-{{ version }}.tar.gz
   sha256: ee0b44add808683d84200bc09d8091fa9652fe4ff0cbb3d690b0ff52651a691d
 
 build:
-  number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  number: 1
+  skip: true  # [py<38]
   entry_points:
     - mathics = mathics.main:main
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   build:
     - {{ compiler('c') }}
-    - {{ stdlib("c") }}
+    - {{ stdlib("c") }}  
   host:
-    - cython
-    - pip
-    - python
-    - setuptools >70.0.0
-  run:
+    - python {{ python_min }}
+    - setuptools >=70.0.0
     - cython >=0.15.1
-    - Mathics-Scanner >=1.3.0
+    - mathics-scanner >=1.4.0
+    - packaging
+    - pip
+  run:
+    - python >={{ python_min }}
+    {% if pkg_type == 'pywin32' %}
+    - pywin32
+    {% else %}
+    - __unix
+    {% endif %}    
+    - mathics-scanner >=1.4.1
     - mpmath >=1.2.0
     - numpy <1.27
     - palettable
-    - stopit
+    - stopit  # [not emscripten]
     - pillow >=9.2
     - pint
-    - python
     - python-dateutil
-    - Pympler
+    - pympler
     - requests
     - scipy
-    - setuptools >70.0.0
-    - packaging
+    - setuptools
     - sympy >=1.13,<1.14
+
 test:
   imports:
     - mathics
-    - mathics.algorithm
+    - mathics.algorithm    
   commands:
     - pip check
     - mathics --help
@@ -55,8 +61,10 @@ test:
 about:
   home: https://mathics.org/
   summary: A general-purpose computer algebra system.
-  license: GPL-2.0-or-later
-  license_file: COPYING.txt
+  license: GPL-2.0-or-later  
+  license_file:
+    - COPYING.txt
+    - mathics/data/ExampleData/copyright.csv
 
 extra:
   recipe-maintainers:
