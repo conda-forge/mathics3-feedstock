@@ -28,7 +28,7 @@ requirements:
     - packaging
     - pip
   run:
-    - python >={{ python_min }}
+    - python
     {% if pkg_type == 'pywin32' %}
     - pywin32
     {% else %}
