@@ -64,7 +64,6 @@ about:
   license: GPL-2.0-or-later  
   license_file:
     - COPYING.txt
-    - mathics/data/ExampleData/copyright.csv
 
 extra:
   recipe-maintainers:
