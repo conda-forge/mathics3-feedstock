@@ -11,7 +11,7 @@ source:
   sha256: ee0b44add808683d84200bc09d8091fa9652fe4ff0cbb3d690b0ff52651a691d
 
 build:
-  number: 0
+  number: 2
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - mathics = mathics.main:main
@@ -27,7 +27,7 @@ requirements:
     - setuptools >=70.0.0
   run:
     - cython >=0.15.1
-    - Mathics-Scanner >=1.3.0
+    - Mathics-Scanner >=1.4.0
     - mpmath >=1.2.0
     - numpy <1.27
     - palettable
