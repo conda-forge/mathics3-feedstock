@@ -1,5 +1,5 @@
 {% set name = "Mathics3" %}
-{% set version = "7.0.0" %}
+{% set version = "8.0.0" %}
 
 
 package:
@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/Mathics3-{{ version }}.tar.gz
-  sha256: 2a4b59f824a1ebdc2390783839b4aa2920db2dc4cebc3286d2b0bb1543cc7fd2
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | lower }}-{{ version }}.tar.gz
+  sha256: ee0b44add808683d84200bc09d8091fa9652fe4ff0cbb3d690b0ff52651a691d
 
 build:
   number: 0
@@ -19,27 +19,30 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - cython
     - pip
     - python
+    - setuptools >=70.0.0
   run:
     - cython >=0.15.1
-    - Mathics-Scanner >= 1.3.0
+    - Mathics-Scanner >=1.3.0
     - mpmath >=1.2.0
     - numpy <1.27
     - palettable
     - stopit
-    - pillow >= 9.2
+    - pillow >=9.2
     - pint
     - python
     - python-dateutil
+    - pywin32-on-windows
     - Pympler
     - requests
     - scipy
-    - setuptools >70.0.0
+    - setuptools >=70.0.0
     - packaging
-    - sympy>=1.13,<1.14
+    - sympy >=1.13,<1.14
 test:
   imports:
     - mathics
