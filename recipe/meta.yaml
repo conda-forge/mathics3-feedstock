@@ -1,5 +1,5 @@
 {% set name = "Mathics3" %}
-{% set version = "8.0.1" %}
+{% set version = "9.0.0" %}
 
 
 package:
@@ -7,14 +7,14 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4ce42e4bbb0aec61ab03ccd537f478dc2eabb953ab69073c07515a6e610c22fb
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | lower }}-{{ version }}.tar.gz
+  sha256: 8b49c156b012dd8ac9ebb08963208a7de3651cd1eb048ec60a4e1f9be586e703
 
 build:
   number: 1
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
-    - mathics = mathics.main:main
+    - mathics = mathics.__main__:main
 
 requirements:
   build:
@@ -27,9 +27,9 @@ requirements:
     - setuptools >=70.0.0
   run:
     - cython >=0.15.1
-    - Mathics-Scanner >=1.3.0
+    - Mathics-Scanner >=1.4.1
     - mpmath >=1.2.0
-    - numpy <1.27
+    - numpy
     - palettable
     - stopit
     - pillow >=9.2
