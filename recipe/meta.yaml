@@ -1,5 +1,5 @@
 {% set name = "Mathics3" %}
-{% set version = "9.0.0" %}
+{% set version = "10.0.1" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | lower }}-{{ version }}.tar.gz
-  sha256: 8b49c156b012dd8ac9ebb08963208a7de3651cd1eb048ec60a4e1f9be586e703
+  sha256: fbf153b110245fbfa4e7f4098f13c86e8d616f986b805ede80d3051b400ddd94
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - mathics = mathics.__main__:main
