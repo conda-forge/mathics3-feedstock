@@ -30,8 +30,7 @@ requirements:
     - Mathics3-Scanner >=10.0.1
     - mpmath >=1.2.0
     - numpy
-    - palettable
-    - stopit
+    - palettable    
     - pillow >=9.2
     - pint
     - python
@@ -43,6 +42,7 @@ requirements:
     - scipy
     - setuptools >=70.0.0
     - packaging
+    - timed-threads
     - sympy >=1.13
 test:
   imports:
