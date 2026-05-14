@@ -27,7 +27,7 @@ requirements:
     - setuptools >=70.0.0
   run:
     - cython >=0.15.1
-    - Mathics-Scanner >=1.4.1
+    - Mathics3-Scanner >=10.0.1
     - mpmath >=1.2.0
     - numpy
     - palettable
@@ -36,13 +36,14 @@ requirements:
     - pint
     - python
     - python-dateutil
+    - python-magic
     - pywin32-on-windows
     - Pympler
     - requests
     - scipy
     - setuptools >=70.0.0
     - packaging
-    - sympy >=1.13,<1.14
+    - sympy >=1.13
 test:
   imports:
     - mathics
