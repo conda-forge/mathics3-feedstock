@@ -26,7 +26,6 @@ requirements:
     - python
     - setuptools >=70.0.0
   run:
-    - cython >=0.15.1
     - Mathics3-Scanner >=10.0.1
     - mpmath >=1.2.0
     - numpy
@@ -36,6 +35,7 @@ requirements:
     - python
     - python-dateutil
     - python-magic
+    - Pympler
     - pywin32-on-windows
     - Pympler
     - requests
