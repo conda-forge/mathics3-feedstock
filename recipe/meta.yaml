@@ -27,7 +27,7 @@ requirements:
     - setuptools >=70.0.0
   run:
     - Mathics3-Scanner >=10.0.1
-    - mpmath >=1.2.0
+    - mpmath >=1.2.0,<1.4.0
     - numpy
     - palettable    
     - pillow >=9.2
